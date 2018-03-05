@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JS Programming From SAP - Santucci</title>
+        <meta name="description" content="referenceMaurizio">
+        
+        <link rel="stylesheet" href="main.css">
+        <style>
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        
+            .comment {
+                align-content: left;
+                
+            }
+        
+        
+        </style>
+        
+    </head>
+        <body >
+        <div class="centeredTitle">
+            <h1> JS Programming From SAP - Santucci</h1>
+            <h2> Playing with JS</h2>
+            <h2> *** Don't Panic! ****</h2>
+        </div>
+        <!--
+            Questo file è realizzato come esercizio per apprendere le basi dei linguaggi Web 2.0  
+        -->
+        <div class="mainText">
+                
+            
+            <img src="https://upload.wikimedia.org/wikipedia/it/thumb/b/bd/Homer_Simpson.png/260px-Homer_Simpson.png" alt="Omer" title="Yes, It's Me!" style="width:250px;height:150px; text-align: center;"/><br>
+            
+        </div>
+        
+        <div class="mainText centeredTitle" >
+            <br>
+            <h2> Q2 Exe from Sap</h2>
+            <h2> See more on py course!!</h2>
+            
+            <!-- la pagina fa uso di una form per facilitare la introdzione dei dati. Si lavora solo nella pagina /-->
+            <button onclick="fQ2_01()">Q2_01</button>  unisci stringhe<br>
+            <button onclick="fQ2_02()">Q2_02</button>  unione mezze stringhe<br>
+            <button onclick="fQ2_03()">Q2_03</button>  isInteger ? then print it!<br>
+            <button onclick="fQ2_04()">Q2_04</button>  è una stringa ammessa?<br>
+            <button onclick="fQ2_05()">Q2_05</button>  string sclicing<br>
+            <button onclick="fQ2_06()">Q2_06</button>  how many times?<br>
+            <button onclick="fQ2_07()">Q2_07</button>  confr str 01<br>
+            <button onclick="fQ2_08()">Q2_08</button>  confr str 01<br>
+            
+            <p id=Rout> </p>
+            
+            <br>
+            <p>This form works on this page only!</p>
+            
+            
+               
+            <script type="text/javascript">
+                function fQ2_01(){
+                    
+                    //strings union without concatenation operator (+)
+                    // initializing and welcome user
+                    var s1 = "ciccio";
+                    var s2="bello";
+                    alert ("Output of s1+s2 - no + operator: s1='ciccio' s2 = 'bello'");
+                    
+                    //engine       
+                    var sOut="";
+                    sOut= s2.replace("",s1);
+                    
+                    //output
+                    alert (sOut);
+                    
+                }
+                
+                function fQ2_02(){
+                    // half strings union
+                    
+                    // initializing and welcome user
+                    var s1 = "pluto";
+                    var s2 = "pippo";
+                    alert ("Output of half s1 + half s2 - : s1='pluto' s2 = 'pippo' ");
+                    
+                    //engine       
+                    var sOut="";
+                    var l1;
+                    var l2;
+                    
+                    l1= Math.ceil(s1.length / 2);
+                    l2= Math.ceil(s2.length / 2);
+                    console.log(l1," ",l2);
+                    s1= s1.slice(0,l1);
+                    //s2=s2.slice(s2.lenght - l2, s2.lenght - 1);
+                    s2 = s2.slice(l2-1, s2.lenght);
+                    sOut= s1+s2;
+                    
+                    //output
+                    alert (sOut)
+                    
+                    
+                }
+                
+               function fQ2_03(){
+                    //by MaoSoft() 20180304
+                    // initializing input strings values
+                    //var i = 0;
+                    var s1 = "100a";
+                    var s2 = "120.12";
+                    var s3 = "-55";
+                    var s4 = "+300";
+                    
+                    //input from user with looping
+                    alert ("I'm in the function Q2_03 now!");
+                    alert ("input values "+s1+" "+s2+" "+s3+" "+s4);
+                    
+                   function isInteger(x) {
+                        //nested function. It performs the task!
+                        //Nan(x) check for all kinds numbers (not just integers)
+                        //of course you shuld use number.isinteger() methods....
+                        
+                        if (isNaN(x)) {
+                            return false;
+                            
+                        } else   {
+                                if ( x.includes (".") ){
+                                    return false;
+                                }
+                            
+                            
+                                return true;
+                        }
+
+                   
+                    }
+                    //engine
+                    var a1;
+                    var a2;
+                    var a3;
+                    var a4;
+                    var iLenA;
+                   
+                    a1 = isInteger(s1);
+                    a2 = isInteger(s2);
+                    a3 = isInteger(s3);
+                    a4 = isInteger(s4);
+                   
+                    //defining array and cycling 
+                    var aAnswer = [a1, a2, a3, a4];
+                    var aInputString = [s1,s2,s3,s4];
+                    iLenA=aAnswer.length;
+                    alert ("ecco i risultati dei test:   ");
+                    for (i = 0; i < iLenA; i++) { 
+                        if  ((aAnswer[i]) == true) {
+                            alert (" "+aInputString[i]+"  "+aInputString[i]+" ");
+                        } else {
+                            alert( " "+aInputString[i]+"  "+"not an integer");
+                        }   
+                        
+                   
+                    }
+                    
+                    
+                    
+                   
+                   
+                    // output
+                    
+                    console.log ("funzione terminata");
+               } 
+                
+                function fQ2_04(){
+                    
+                    //input from user with looping
+                    alert ("I'm in the function Q2_04 now!");
+                    //init
+                    aValidString =["asso","fante","cavaliere","re"]
+                    
+                    while (x != 0) {
+                        var x = prompt("Please enter number. 0 to exit ", "");
+                        
+                        console.log ("sono in while " +  x);
+                        
+                        if (x == 0) { break; } 
+                        
+                        //engine
+                        
+                        // evaluating if x is in array
+                        var i = 1;
+                        var aVSLen;
+                        var sValid = true;
+                        aVSLen = aValidString.length;
+                        /*
+                        for (i = 0; (i < aVSLen); i++) { 
+                            console.log ("sono in for " +i+"  "+x+"  "+aValidString[i]); // internal test
+                            // alert("for loop " + x + " " + i);
+                            
+                            
+                            
+                        }
+                        */
+                        
+                        if ( !(aValidString.includes (x))) {
+                                    alert (x+" not allowed");
+                                    sValid=false;
+                                    break;
+                        } 
+                        
+                        
+                        
+                        alert (x+" here you are");
+                    }
+                }
+            
+                function fQ2_05(){
+                    // initializing 
+                    
+                    //input from user 
+                    alert ("I'm in the function Q2_05 now!");
+                    var x = prompt("Please enter string");
+                    var k = prompt("Please enter 1st number ");
+                    var l = prompt("Please enter 2nd number ");
+                    
+                    
+                    
+                    //engine 
+                    alert ("string's slicing ");
+                    var res = x.slice(k, l);
+                    alert (x+" "+k+" "+l+" "+res);                            
+                }   
+                function fQ2_06(){
+                    // initializing 
+                    
+                    //input from user 
+                    alert ("I'm in the function Q2_06now!");
+                    var s1 = prompt("Please enter string 1");
+                    var s2 = prompt("Please enter string 2 ");
+                    var k = prompt("Please enter position! ");
+                    
+                    
+                    
+                    //engine 
+                    alert ("string's matching ");
+                    if ( !(s2.includes(s1[k-1]))) {
+                        alert ("no way!");
+                        return;
+                    } else {
+                        alert ("ho almeno una occorrenza ");
+                        var n = 0;
+                        for (i = 0; i < s2.length; i++){
+                            console.log (s2[i]+"  "+s1[k-1]);
+                            if (s2[i]==s1[k-1]){
+                                n = n + 1;
+                            } 
+                        } 
+                    }    
+                    console.log ("valore del carattere in valutazione " + s1[k-1]);
+                    console.log ("valore di n " + n);
+                    
+                    if (n > 1) {
+                        alert ("you got it!"); 
+                    
+                    } else {
+                        alert ("just 1 occourrence sorry! ");  
+                    }
+                                                
+                
+                }   
+            
+            
+            </script>   
+            
+    
+        </div>
+    
+    
+        </body>
+</html>    

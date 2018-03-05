@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JS Programming From SAP - Santucci</title>
+        <meta name="description" content="referenceMaurizio">
+        
+        <link rel="stylesheet" href="main.css">
+        <style>
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        
+            .comment {
+                align-content: left;
+                
+            }
+        
+        
+        </style>
+        
+    </head>
+        <body >
+        <div class="centeredTitle">
+            <h1> JS Programming From SAP - Santucci</h1>
+            <h2> Playing with JS</h2>
+            <h2> *** Don't Panic! ****</h2>
+        </div>
+        <!--
+            Questo file è realizzato come esercizio per apprendere le basi dei linguaggi Web 2.0  
+        -->
+        <div class="mainText">
+                
+            
+            <img src="https://upload.wikimedia.org/wikipedia/it/thumb/b/bd/Homer_Simpson.png/260px-Homer_Simpson.png" alt="Omer" title="Yes, It's Me!" style="width:250px;height:150px; text-align: center;"/><br>
+            
+        </div>
+        
+        <div class="mainText centeredTitle" >
+            <br>
+            <h2> Q1 Exe from Sap</h2>
+            <h2> See more on py course!!</h2>
+            
+            <!-- la pagina fa uso di una form per facilitare la introdzione dei dati. Si lavora solo nella pagina /-->
+            <button onclick="fQ1_01()">Q1_01</button>  somma positivi e negativi<br>
+            <button onclick="fQ1_02()">Q1_02</button>  media<br>
+            <button onclick="fQ1_03()">Q1_03</button>  differenza massima<br>
+            <button onclick="fQ1_04()">Q1_04</button>  è un numero primo?<br>
+            <button onclick="fQ1_05()">Q1_05</button>  confr str 01<br>
+            <p id=Rout> </p>
+            
+            <br>
+            <p>This form works on this page only!</p>
+            
+            
+               
+            <script type="text/javascript">
+                function fQ1_01(){
+                    
+                    
+                    // initializing accumulators
+                    var nPos = +0;
+                    var nNeg = +0;
+                    
+                    //input from user with looping
+                    alert ("I'm in the function now!");
+                    while (x != 0) {
+                        
+                        var x = prompt("Please enter number. 0 to exit ", "");
+                        
+                        //engine
+                        x = Number(x); // this is fundamental (Assuming x input is a string..)
+                        
+                        // adding positive #
+                        if (x > 0) {
+                            nPos = (nPos + x);
+                            //alert (x + " is Positive. Sum of Positive: " + nPos); 
+                        } 
+                        
+                        // adding negative #
+                        if (x < 0) {
+                            nNeg = (nNeg + x);
+                            //alert (x + " is Negative"); 
+                        } 
+                    
+                    }
+                    // output
+                    alert ("sum of Positive - Negative " + nPos + "-  " + nNeg );
+    
+                    /* --doesn' work. maybe later..
+                    var x = document.createElement("INPUT");
+                    x.setAttribute("type", "text");
+                    x.setAttribute("value", "Enter Number. 0 to exit");
+                    x.
+                    //document.body.replaceChild(x);
+                    document.body.appendChild(x);
+                    alert ("this is your number  " + x );
+                    */
+                }
+                
+                function fQ1_02(){
+                    // initializing accumulators and index
+                    var i = 0;
+                    var nSum = 0;
+                    var nMean = 0;
+                    
+                    //input from user with looping
+                    alert ("I'm in the function Q1_02 now!");
+                    while (x != 0) {
+                        
+                        var x = prompt("Please enter number. 0 to exit ", "");
+                        
+                        //engine
+                        x = Number(x); // this is fundamental (Assuming x input is a string..)
+                        
+                        // adding numbers and counting cycles #
+                        i = i + 1;
+                        nSum = nSum + x;
+                        
+                    } 
+                    i = i-1; // yes your cycle check for condition inside the cycle itself...
+                    nMean = (nSum / i);
+                    
+                    // output
+                    alert ("Somma= " +nSum + " count= " +i + " Mean Value  " + nMean );
+                }
+                
+               function fQ1_03(){
+                    // initializing accumulators and index
+                    //var i = 0;
+                    var nMaxDiff = 0;
+                    var nPrev=0;
+                    var nDiff =0;
+                    
+                    //input from user with looping
+                    alert ("I'm in the function Q1_03 now!");
+                    while (x != 0) {
+                        
+                        var x = prompt("Please enter number. 0 to exit ", "");
+                        x = Number(x); // this is fundamental (Assuming x input is a string..)
+                        if (x === 0) { break; } 
+                        
+                        //engine
+                        
+                        // evaluating difference btw consecutive numbers 
+                        
+                        
+                        nDiff = Math.abs (x - nPrev);
+                        if (nDiff > nMaxDiff) {
+                            nMaxDiff = nDiff;
+                        }
+                        nPrev = x;
+                    
+                    } 
+                    
+                    
+                    
+                    // output
+                    alert ("Massima Differenza tra due consecutivi:   " + nMaxDiff);
+                } 
+                
+                function fQ1_04(){
+                    
+                    //input from user with looping
+                    alert ("I'm in the function Q1_04 now!");
+                    while (x != 0) {
+                        var bIsPrime = true;
+                        var x = prompt ("Please enter number. 0 to exit ", "");
+                        x = Number(x); // this is fundamental (Assuming x input is a string..)
+                        alert("while loop " + bIsPrime);
+                        console.log ("sono in while " +  x);
+                        
+                        if (x == 0) { break; } 
+                        
+                        //engine
+                        
+                        // evaluating if x is a prime number 
+                        var i = 1;
+                    
+                        for (i = 2; (i < (x/2)); i++) { 
+                            console.log ("sono in for " +i);
+                            alert("for loop " + bIsPrime + " " + i);
+                            alert (x%i);
+                            console.log ("x%i = " + x%i);
+                            if (x % i === 0) {
+                                bIsPrime = false;
+                                alert ("" + x + " is not prime!");
+                                break; // esce dal ciclo for
+                            } 
+                        }
+                        if (bIsPrime == false) {
+                            break;  //esce dal ciclo while  
+                        }
+                        if (bIsPrime){ 
+                            alert ("" + x + " is  prime!");
+                        }
+                    
+                    }
+                }
+            
+                function fQ1_05(){
+                    // initializing 
+                    
+                    
+                    var s1="abcd";
+                    var s2="bcde" ;
+                    var bCond = true;
+                    
+                    //engine 
+                    alert ("confronto stringhe!!");
+                    for (i = 0; (i < s1.length); i++) { 
+                            console.log ("sono in for " + i);
+                            if (s1[i] > s2[i]) {
+                                bCond = false;
+                                alert ("f"+bCond);
+                                break; // esce dal ciclo for
+                            } 
+                    }
+                    
+                    if (bCond){ 
+                            alert ("t"+bCond);
+                
+                    } 
+                 }   
+ 
+            
+            
+            </script>   
+            
+    
+        </div>
+    
+    
+        </body>
+</html>    
