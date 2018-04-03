@@ -1,0 +1,83 @@
+<html>
+
+    <head>
+        
+        <title>JS/jQ_SAP08_03 FindChar - Form</title>
+ 
+        <!--
+            CSS and JS/JQ embedded
+            Here we test a simple validation form 
+            modified by MaoSoft() 2018 03 25
+            // version with: 
+                //separate JS and CSS to reutilize snippets
+                //utilizing an html and a JS file for 
+                  each exercise 
+                by MaoSoft() R1 . 20180331
+                             R2 . 20180403
+
+
+            //changeLog - toDo
+            //01 testing reading   a file via JS --not working
+            //02 easy text elaboration --yes it works
+            //03 do exercise
+                
+            -->
+        
+        
+        <!-- // loading Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!-- this css section is on file ! -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+
+    <body>
+
+        <div id="head">
+            This is the 08.01 LAB TEST <br>
+            from Sapienza University<br>        
+        
+        </div>
+
+        <div id= "text">
+            A_Ex1(file, c)scrivere una funzione che riceve in ingresso il nome di un file file e un carattere
+            c e restituisce una nuova lista che contiene tutte e solo le parole del file che contengono il carattere c (sia
+            minuscolo che maiuscolo). Ad esempio se il file vale “NEL mezzo del cammin\n” e c vale ‘e’ la
+            funzione deve restituire [‘NEL’,’mezzo’,’del’]. Inoltre deve contare quante parole contengono c;
+        </div>
+
+
+        <div class="form-element">
+        
+            <label for="stringa1">Stringa 1</label>
+            <input type="text" name="stringa1" id="stringa1" placeholder = "insert 1st string">
+            
+        </div>
+        
+        <div class="form-element">
+        
+            <label for="stringa2">Stringa 2</label>
+            <input type="text" name="stringa2" id="stringa2" placeholder = "insert just one char">
+        </div>
+
+        <div class="form-element">
+            <label for="Output">Output  </label>
+            <input type="text" name="Output" id="Output" placeholder = "Output">
+        </div>
+
+        <div class="form-element">
+            <input type="submit" id="08_01Button" value="Go!">
+        </div>
+        
+        <!-- this script section is on file ! 
+        script file is the same for all exercise. 
+        Functions inside script are quite different
+        -->
+        <script type="text/javascript" src="script1.js"></script> 
+
+    <body>
+
+
+
+<html>
