@@ -1,75 +1,181 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         
-        <title>JS/jQ_SAP08_03 FindChar - Form</title>
+        <title>JS/jQ_SAP08_01 FindChar - Form</title>
  
         <!--
-            CSS and JS/JQ embedded
-            Here we test a simple validation form 
-            modified by MaoSoft() 2018 03 25
+            CSS and JS/JQ embedded Plus Bootstrap UI            
+            Engine compare JS with python
+            by MaoSoft() 2018 04 08
+            
             // version with: 
                 //separate JS and CSS to reutilize snippets
                 //utilizing an html and a JS file for 
                   each exercise 
                 by MaoSoft() R1 . 20180331
                              R2 . 20180403
+                             R3 . 20180408 working with bootstrap!
 
 
             //changeLog - toDo
             //01 testing reading   a file via JS --not working
-            //02 easy text elaboration --yes it works
-            //03 do exercise
+            //02 easy text elaboration * yes it works
+            //03 do exercise * yiw
+            //04 Using navbar and modal BS (coding html + JS only)--
+            //05 cs but using php
+            //xx input text string from web site
                 
             -->
         
         
-        <!-- // loading Jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- // loading CSS Section of bootstrap -->
         
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- this css section is on file ! -->
         <link rel="stylesheet" type="text/css" href="style.css">
         
+    
+    
     </head>
 
     <body>
-
-        <div id="head">
-            This is the 08.01 LAB TEST <br>
-            from Sapienza University<br>        
+        <!-- navbar standard -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">MaoSoft()</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+        </nav>
         
+        <div id="headExe">
+            This is the 08.01 LAB TEST  R 3.0<br>
+            from Sapienza University<br>        
         </div>
 
-        <div id= "text">
+        <div id= "textExe">
             A_Ex1(file, c)scrivere una funzione che riceve in ingresso il nome di un file file e un carattere
             c e restituisce una nuova lista che contiene tutte e solo le parole del file che contengono il carattere c (sia
             minuscolo che maiuscolo). Ad esempio se il file vale “NEL mezzo del cammin\n” e c vale ‘e’ la
             funzione deve restituire [‘NEL’,’mezzo’,’del’]. Inoltre deve contare quante parole contengono c;
         </div>
 
-
-        <div class="form-element">
-        
-            <label for="stringa1">Stringa 1</label>
-            <input type="text" name="stringa1" id="stringa1" placeholder = "insert 1st string">
+        <!-- Button trigger modal and data access-->
+        <button type="button" id="btnText" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name="08_01_text">
+        08_01_text
+        </button>
             
+        <button type="button" id="btnWeb" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name="08_01_web">
+        08_01_web
+        </button>
+            
+        <button type="button" id="btnFile" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name="08_01_file">
+        08_01_file
+        </button>
+      
+        <!-- Modal  // works with JS parts
+        for now it shows only the neme of the routine!
+        Later you may run the function inside the modal button!
+        -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                              
+                    <div class="modal-body">
+                        This is modal body text...
+                    </div>
+            
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="form-element">
-        
-            <label for="stringa2">Stringa 2</label>
-            <input type="text" name="stringa2" id="stringa2" placeholder = "insert just one char">
-        </div>
+        <!-- ****** from here ******----  
+            associate each buttons its Js file or function
+            write specific routines with common functions for each case
 
-        <div class="form-element">
-            <label for="Output">Output  </label>
-            <input type="text" name="Output" id="Output" placeholder = "Output">
-        </div>
-
+        -->
+        
+        <!-- maybe this eventually over -->
+        <p>  </p>
         <div class="form-element">
             <input type="submit" id="08_01Button" value="Go!">
         </div>
+        <p>  </p>
+        <p id="demo">"ciao per ora!</p>
         
+        <!-- this script section is loading external libraries  !  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+
+        <!-- this script section is on this file ! -->
+        <script type="text/javascript">
+            //you have to deep inside
+            $('#myModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);  // #mymodal is on so you can define a related target
+                var recipient = button.data('name');
+                var modal = $(this);
+                modal.find('.modal-title').text('Now I am launching ' + recipient);
+
+            })
+            
+            $("#myModal").on("hidden.bs.modal", function (event) {
+                // just fo learn!
+                alert("Modal closed!");
+                
+            })
+        
+        </script>
+
+
+
+
         <!-- this script section is on file ! 
         script file is the same for all exercise. 
         Functions inside script are quite different
